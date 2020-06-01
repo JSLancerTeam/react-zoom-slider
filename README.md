@@ -4,35 +4,17 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-Simple responsive timeline implemented in ReactJS
-
-### Demo
-
-Live demo:
-- codesanbox:  https://codesandbox.io/s/react-responsive-timeline-q8vsn
-- stackblitz: https://stackblitz.com/edit/react-responsive-timeline
-
+Simple zoom slider image implemented in ReactJS
 
 To run demo on your computer:
   - Clone this repository
-  - `yarn install`
-  - `yarn run dev`
+  - `npm install`
+  - `npm run dev`
 
 ### Screenshot
 
-pivot: vertical
 
-direction: left
-
-![alt text](https://raw.githubusercontent.com/JSLancerTeam/react-responsive-timeline/master/images/screen-shot.png)
-
-pivot: vertical
-
-direction: center
-
-tooltip: true
-
-![alt text](https://raw.githubusercontent.com/JSLancerTeam/react-responsive-timeline/master/images/tooltip.png)
+![alt text](https://raw.githubusercontent.com/JSLancerTeam/react-responsive-timeline/master/images/demo.gif)
 
 ### Usage
 
@@ -43,36 +25,39 @@ tooltip: true
 ```
 import SliderImage from 'react-zoom-slider';
 
-<SliderImage
-  pivot="vertical"
-  direction="left"
-  tooltip={true}
-  textLimit="none"
-  timelines={[
-    {
-      title: 'C.A. Alexander, A Pattern Language, New York,, 1977.',
-      sub: '10 May 2020',
-    },
-    {
-      title: 'E. Yourdon, L. Constantine, Structured Design, N.J.,, 1978.',
-      sub: '12 May 2020',
-    },
-    {
-      title: 'C.A. Alexander, The Timeless Way of Building, New York,, 1979.',
-      sub: '05 July 2020',
-    }
-  ]} />
+const data = [
+  {
+    image: 'https://cdn.tgdd.vn/Products/Images/42/209800/oppo-reno2-f-xanh-1-org.jpg',
+    text: 'img1'
+  },
+  {
+    image: 'https://cdn.tgdd.vn/Products/Images/42/209800/oppo-reno2-f-xanh-4-org.jpg',
+    text: 'img2'
+  },
+  {
+    image: 'https://cdn.tgdd.vn/Products/Images/42/209800/oppo-reno2-f-xanh-10-org.jpg',
+    text: 'img3'
+  },
+  ...
+];
+
+
+<SliderImage 
+  data={data} 
+  width="500px" 
+  showDescription={true} 
+  direction="right" 
+/>
 ```
 
 
 ##### Props
 |Prop name |Prop type|Default value|Description|
 |---------|---------|-------------|-----------|
-timelines | array | Required | data |
-pivot | string | vertical | Describe vertical, horizontal |
-direction | string | left | Describe left, center, right |
-tooltip | boolean | false | show tooltip |
-textLimit | string | none | set limit text. Or a css px string. Eg: <b>"100px"</b>, <b>"200px"</b> ... |
+data | array | Required | data |
+width? | string | auto | set size for slider image |
+direction? | left, right | right | direction when show zoom image |
+showDescription? | boolean | true | show description of image 
 
 ### Author
 - Tony Nguyen - nhattruong1811@gmail.com
@@ -80,4 +65,4 @@ textLimit | string | none | set limit text. Or a css px string. Eg: <b>"100px"</
 ### License
 MIT
 
-[package-url]: https://npmjs.org/package/react-responsive-timeline
+[package-url]: https://npmjs.org/package/react-zoom-slider

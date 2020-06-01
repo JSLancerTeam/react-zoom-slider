@@ -1,36 +1,31 @@
 import React from 'react';
 
 interface SliderImage {
-	title: string;
-	sub?: string;
-}
-
-type TimelineDirection = 'left' | 'center' | 'right';
-type TimelinePivot = 'vertical' | 'horizontal';
-
-interface TimelineProps {
-	/**
-	 * Array of TimelineItem to display on the timeline
-	 */
-	timelines: TimelineItem[];
-	/**
-	 * Left, Center, or Right
-	 */
-	direction?: TimelineDirection;
-	/**
-	 * Horizontal or Vertical
-	 */
-	pivot?: TimelinePivot;
-	/**
-	 * 'none' or a CSS px string. Eg: 100px, 200px...
-	 */
-	textLimit?: string;
-	/**
-	 * Whether to display a tooltip
-	 */
-	tooltip?: boolean;
+	image: string;
+	text?: string;
 }
 
 declare const SliderImage: React.ComponentType<SliderImageProps>;
 
-export { SliderImage };
+type SliderDirection = 'left' | 'right';
+
+interface SliderImageProps {
+	/**
+	 * Array to display on the slider image
+	 */
+	data: SliderImage[];
+	/**
+	 * Left, Center, or Right
+	 */
+	direction?: SliderDirection;
+	/**
+	 * Whether to display a description image
+	 */
+	showDescription?: boolean;
+	/**
+	 * Set size for slider image
+	 */
+	width?: auto;
+}
+
+export default SliderImage;

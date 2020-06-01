@@ -1,14 +1,14 @@
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import external from 'rollup-plugin-peer-deps-external';
-import postcss from 'rollup-plugin-postcss';
-import resolve from '@rollup/plugin-node-resolve';
-import url from '@rollup/plugin-url';
-import svgr from '@svgr/rollup';
-import dts from 'rollup-plugin-dts';
-import { terser } from 'rollup-plugin-terser';
+import babel from 'rollup-plugin-babel'
+import commonjs from 'rollup-plugin-commonjs'
+import external from 'rollup-plugin-peer-deps-external'
+import postcss from 'rollup-plugin-postcss'
+import resolve from '@rollup/plugin-node-resolve'
+import url from '@rollup/plugin-url'
+import svgr from '@svgr/rollup'
+import dts from 'rollup-plugin-dts'
+import { terser } from 'rollup-plugin-terser'
 
-import pkg from './package.json';
+import pkg from './package.json'
 
 export default [
   {
@@ -17,22 +17,22 @@ export default [
       {
         file: pkg.main,
         format: 'cjs',
-        sourcemap: true
+        sourcemap: true,
       },
       {
         file: pkg.module,
         format: 'es',
-        sourcemap: true
-      }
+        sourcemap: true,
+      },
     ],
     plugins: [
       postcss({
         plugins: [],
         minimize: true,
-        sourceMap: 'inline'
+        sourceMap: 'inline',
       }),
       external({
-        includeDependencies: true
+        includeDependencies: true,
       }),
       url(),
       svgr(),
@@ -44,18 +44,18 @@ export default [
           '@babel/plugin-proposal-optional-chaining',
           '@babel/plugin-syntax-dynamic-import',
           '@babel/plugin-proposal-class-properties',
-          'transform-react-remove-prop-types'
+          'transform-react-remove-prop-types',
         ],
         exclude: 'node_modules/**',
-        runtimeHelpers: true
+        runtimeHelpers: true,
       }),
       commonjs(),
-      terser()
-    ]
+      terser(),
+    ],
   },
   {
     input: 'src/lib/index.d.ts',
     output: [{ file: pkg.typings, format: 'es' }],
-    plugins: [dts()]
-  }
-];
+    plugins: [dts()],
+  },
+]
