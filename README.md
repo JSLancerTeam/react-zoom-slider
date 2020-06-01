@@ -14,7 +14,7 @@ To run demo on your computer:
 ### Screenshot
 
 
-![alt text](https://raw.githubusercontent.com/JSLancerTeam/react-responsive-timeline/master/images/demo.gif)
+![alt text](https://raw.githubusercontent.com/JSLancerTeam/react-zoom-slider/master/images/demo.gif)
 
 ### Usage
 
