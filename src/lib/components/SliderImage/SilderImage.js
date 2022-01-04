@@ -98,7 +98,7 @@ const SilderImage = ({
         <div className="react-slider__areaZoom">
           <div className="react-slider__lens" ref={refLens} />
           <div className="react-slider__picture">
-            <img src={selectedImage.image} alt={selectedImage.image} ref={refImage} />
+            <img src={selectedImage?.image} alt={selectedImage?.image} ref={refImage} />
           </div>
           <div
             ref={refResult}
